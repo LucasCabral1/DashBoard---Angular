@@ -12,12 +12,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { PostsComponent } from './modules/posts/posts.component';
-import { MatDividerModule } from '@angular/material/divider'
-import { MatCardModule } from '@angular/material/card'
+import { MatDividerModule } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
-
-
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { Card2Component } from './shared/widgets/card2/card2.component';
+import { PieComponent } from './shared/widgets/pie/pie.component';
+import { DashboardService } from './modules/dashboard.service';
 
 @NgModule({
   declarations: [
@@ -25,9 +27,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     DefaultComponent,
     DashboardComponent,
     PostsComponent,
-
-
-
   ],
   imports: [
     BrowserModule,
@@ -39,9 +38,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSidenavModule,
     MatDividerModule,
     FlexLayoutModule,
-    MatCardModule
+    MatCardModule,
+    MatPaginatorModule,
+    MatTableModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [DashboardService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
